@@ -1,4 +1,4 @@
-from base_n import bNCom
+from b10To_bN import bNCom
 
 def base_i_N_convert(b10Comp, N=12, maxMag=0):
     '''b10Comp is type complex (int works too), N is the real part of the base maxMag is the number of digits'''
@@ -34,7 +34,7 @@ def base_i_N_convert(b10Comp, N=12, maxMag=0):
     bNRe = bNCom(b10ReAbs, N, maxMag)
     bNIm = bNCom(b10ImAbs, N, maxMag)
     b_iN = ''
-    if ('#invalid maxNum' in bNRe) or ('#invalid maxNum' in bNIm):
+    if ('Error: invalid maxNum' in bNRe) or ('Error: invalid maxNum' in bNIm):
         return 'invalid maxMag'
     # puts the real and imag in the i subscript N base
     for x in range(maxMag*4):

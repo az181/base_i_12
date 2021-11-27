@@ -15,9 +15,9 @@ def b12Com(InNum, maxMag):
                 try:
                     base12List.append(moreThanBase10[InNum//m12])
                 except KeyError:
-                    return '#invalid maxNum'
+                    return 'Error: invalid maxNum'
             else:
-                return '#invalid maxNum'
+                return 'Error: invalid maxNum'
             InNum = InNum % m12
     outputStr = ''
     for i in base12List:
@@ -59,8 +59,8 @@ def base_i_12_convert(b10Comp, maxMag=0):
     b12Re = b12Com(b10ReAbs, maxMag)
     b12Im = b12Com(b10ImAbs, maxMag)
     b_i12 = ''
-    if ('#invalid maxNum' in b12Re) or ('#invalid maxNum' in b12Im):
-        return 'invalid maxMag'
+    if ('Error: invalid maxNum' in b12Re) or ('Error: invalid maxNum' in b12Im):
+        return 'Error: invalid maxMag'
     # puts the real and imag in the i subscript 12 base
     for x in range(maxMag*4):
         x4 = x % 4

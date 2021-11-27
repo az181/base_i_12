@@ -29,9 +29,9 @@ def bNCom(InNum, N=10, maxMag=0):
                 try:
                     baseNList.append(chr(InNum//mN+65-10))
                 except Exception:
-                    return '#invalid N i think??'
+                    return 'Error: invalid N i think??'
             else:
-                return '#invalid maxNum ???'
+                return 'Error: invalid maxNum ???'
             InNum = InNum % mN
     outputStr = ''
     for i in baseNList:

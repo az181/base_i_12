@@ -53,6 +53,6 @@ if __name__=='__main__':
     print(bNCom(36,37,3))
     #00[
     print(bNCom(1752,60))
-    #Ua
+    #TC
     print(bNCom(857621339472816227,60))
     #1P63L`AQ03f

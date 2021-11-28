@@ -1,9 +1,9 @@
 def bNCom(InNum, N=10, maxMag=0):
     '''InNum is the number, N base number (real int only) and maxNum is the number of digits'''
-    if N==10:
+    if N == 10:
         if not maxMag == 0:
-            InNum=str(InNum)
-            InNum='0'*(maxMag-len(InNum))+InNum[len(InNum)-maxMag:]
+            InNum = str(InNum)
+            InNum = '0'*(maxMag-len(InNum))+InNum[len(InNum)-maxMag:]
             return InNum
         return str(InNum)
     if maxMag == 0:
@@ -13,7 +13,7 @@ def bNCom(InNum, N=10, maxMag=0):
         while temp > 1:
             temp = maxMagUsed/(N**dig)
             dig += 1
-        maxMagUsed= dig
+        maxMagUsed = dig
     else:
         maxMagUsed = maxMag
 
@@ -23,13 +23,13 @@ def bNCom(InNum, N=10, maxMag=0):
     for i in range((maxMagUsed-1), -1, -1):
         mN = N**i
         if InNum < mN:
-            outputStr+='0'
+            outputStr += '0'
         else:
             if 10 > InNum//mN:
-                outputStr+=str(int(InNum//mN))
+                outputStr += str(int(InNum//mN))
             elif 10 <= InNum//mN:
                 try:
-                    outputStr+=chr(InNum//mN+65-10)
+                    outputStr += chr(InNum//mN+65-10)
                 except Exception:
                     return 'Error: invalid N i think??'
             else:
@@ -41,18 +41,20 @@ def bNCom(InNum, N=10, maxMag=0):
         outputStr = outputStr[len(outputStr)-maxMag:]
     else:
         for i in outputStr:
-            if i=='0':
+            if i == '0':
                 outputStr = outputStr[1:]
             else:
                 break
     return outputStr
 
-if __name__=='__main__':
-    print(bNCom(36,10,5))
-    #00036
-    print(bNCom(36,37,3))
-    #00[
-    print(bNCom(1752,60))
-    #Ua
-    print(bNCom(857621339472816227,60))
-    #1P63L`AQ03f
+
+if __name__ == '__main__':
+    # print(bNCom(36, 10, 5))
+    # # 00036
+    # print(bNCom(36, 37, 3))
+    # # 00[
+    # print(bNCom(1752, 60))
+    # # TC
+    # print(bNCom(857621339472816227, 60))
+    # # 1P63L`AQ03f
+    print(bNCom(input('input number:','input base:')))

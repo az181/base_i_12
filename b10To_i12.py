@@ -3,17 +3,16 @@ def b12Com(InNum, maxMag):
     if not(type(maxMag) is int) and (type(InNum) is int):
         return'maxNum or InNum invalid'
     base12List = []
-    moreThanBase10 = {10+i: chr(65+i) for i in range(12-10)}
     for i in range((maxMag-1), -1, -1):
         m12 = 12**i
         if InNum < m12:
-            base12List.append('0')
+            base12List+='0'
         else:
             if 10 > InNum//m12:
-                base12List.append(str(int(InNum//m12)))
+                base12List+=str(int(InNum//m12))
             elif 10 <= InNum//m12:
                 try:
-                    base12List.append(moreThanBase10[InNum//m12])
+                    base12List+=chr(InNum//m12+65-10)
                 except KeyError:
                     return 'Error: invalid maxNum'
             else:
@@ -78,6 +77,10 @@ def base_i_12_convert(b10Comp, maxMag=0):
 
 
 if __name__ == '__main__':
-    print(b12Com(12, 2))
-    print(base_i_12_convert(12+12j, 1))
+    # print(b12Com(12, 2))
+    # # 10
+    # print(base_i_12_convert(57-169j))
+    # # 100020041009
+    # print(base_i_12_convert(12+12j, 1))
+    # # Error: invalid maxMag
     print(base_i_12_convert(complex(input('input complex number here:'))))

@@ -1,5 +1,6 @@
 from b10To_bN import bNCom
 
+
 def base_i_N_convert(b10Comp, N=12, maxMag=0):
     '''b10Comp is type complex (int works too), N is the real part of the base maxMag is the number of digits'''
     try:
@@ -51,5 +52,6 @@ def base_i_N_convert(b10Comp, N=12, maxMag=0):
         else:
             return b_iN
 
-if __name__=='__main__':
-    print(base_i_N_convert(7+3J,5))
+
+if __name__ == '__main__':
+    print(base_i_N_convert(7+3J, 5))

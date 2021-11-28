@@ -1,5 +1,15 @@
 def bi12To_b10(i12Num, maxMag=0):
-    i12Num = '0'*(4-(len(str(i12Num)) % 4))+str(i12Num)
+    # error handling
+    error=''
+    if type(i12Num)!=str:
+        error+='TypeError: invalid i12Num\n'
+    if type(maxMag)!=int:
+        error+='TypeError: invalid maxMag\n'
+    if error!='':
+        return error
+    
+    
+    i12Num = '0'*(4-(len(i12Num) % 4))+i12Num
     im = False
     b10Num = [0, 0]
     num = [str(i) for i in range(1,10)]
@@ -24,7 +34,7 @@ def bi12To_b10(i12Num, maxMag=0):
 
 
 if __name__ == '__main__':
-    # print(bi12To_b10(100020041009))
+    # print(bi12To_b10('100020041009'))
     # # (57-169j)
     # print(bi12To_b10('3004900B'))
     # # (59-45j)

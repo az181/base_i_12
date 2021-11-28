@@ -1,9 +1,10 @@
 from b10To_bN import b10To_bN
 
-
+# TODO fix base error
 def b10To_biN(b10Comp, N=12, maxMag=0):
     '''b10Comp is type complex (int works too), N is the real part of the base maxMag is the number of digits'''
     try:
+        b10Comp=complex(b10Comp)
         b10ReAbs = abs(b10Comp.real)
         b10ImAbs = abs(b10Comp.imag)
     except:
@@ -54,4 +55,8 @@ def b10To_biN(b10Comp, N=12, maxMag=0):
 
 
 if __name__ == '__main__':
-    print(b10To_biN(7+3J, 5))
+    # print(b10To_biN(7+3J, 5))
+    # # '10032'
+    # print(b10To_biN(23+4j,3.5))
+    # # '100130000'
+    print(b10To_biN(complex(input('input the complex number (j in the imaganerdy part eg. 10+7j):')),float(input('input the base:'))))

@@ -24,7 +24,8 @@ def b10To_bN(InNum, N=10, maxMag=0):
         maxMagUsed = maxMag
 
     if not(type(maxMagUsed) is int) and (type(InNum) is int):
-        return'maxNum or InNum invalid'
+        return'Error: maxNum or InNum invalid'
+    # makes the output 
     outputStr = ''
     for i in range((maxMagUsed-1), -1, -1):
         mN = N**i
@@ -33,16 +34,12 @@ def b10To_bN(InNum, N=10, maxMag=0):
         else:
             if 10 > InNum//mN:
                 outputStr += str(int(InNum//mN))
-            elif 10 <= InNum//mN:
+            else:
                 try:
                     outputStr += chr(InNum//mN+65-10)
                 except Exception:
                     return 'Error: invalid N i think??'
-            else:
-                return 'Error: invalid maxNum ???'
             InNum = InNum % mN
-    # for i in outputStr:
-    #     outputStr += i
     if maxMag != 0:
         outputStr = outputStr[len(outputStr)-maxMag:]
     else:

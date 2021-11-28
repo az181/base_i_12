@@ -1,4 +1,4 @@
-def b12Com(InNum, maxMag):
+def b10To_b12(InNum, maxMag):
     '''InNum is the number and maxNum is the number of digits'''
     if not(type(maxMag) is int) and (type(InNum) is int):
         return'maxNum or InNum invalid'
@@ -24,7 +24,7 @@ def b12Com(InNum, maxMag):
     return outputStr
 
 
-def base_i_12_convert(b10Comp, maxMag=0):
+def b10To_bi12(b10Comp, maxMag=0):
     '''b10Comp is type complex (int works too), maxMag is the number of digits'''
     try:
         b10ReAbs = abs(b10Comp.real)
@@ -55,8 +55,8 @@ def base_i_12_convert(b10Comp, maxMag=0):
         maxMag = dig
 
     # converts real and imaginary to base 12
-    b12Re = b12Com(b10ReAbs, maxMag)
-    b12Im = b12Com(b10ImAbs, maxMag)
+    b12Re = b10To_b12(b10ReAbs, maxMag)
+    b12Im = b10To_b12(b10ImAbs, maxMag)
     b_i12 = ''
     if ('Error: invalid maxNum' in b12Re) or ('Error: invalid maxNum' in b12Im):
         return 'Error: invalid maxMag'
@@ -77,10 +77,10 @@ def base_i_12_convert(b10Comp, maxMag=0):
 
 
 if __name__ == '__main__':
-    # print(b12Com(12, 2))
+    # print(b102b12(12, 2))
     # # 10
-    # print(base_i_12_convert(57-169j))
+    # print(b102bi12(57-169j))
     # # 100020041009
-    # print(base_i_12_convert(12+12j, 1))
+    # print(b102bi12(12+12j, 1))
     # # Error: invalid maxMag
-    print(base_i_12_convert(complex(input('input complex number here:'))))
+    print(b10To_bi12(complex(input('input complex number here:'))))

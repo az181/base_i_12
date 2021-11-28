@@ -1,4 +1,4 @@
-# base_i_12
+# base_i_12 (beta)
 base i₁₂
 
 converts base 10 number to base i₁₂

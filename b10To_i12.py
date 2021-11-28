@@ -79,5 +79,9 @@ def base_i_12_convert(b10Comp, maxMag=0):
 
 if __name__ == '__main__':
     print(b12Com(12, 2))
+    # 10
+    print(base_i_12_convert(57-169j))
+    # 100020041009
     print(base_i_12_convert(12+12j, 1))
+    # Error: invalid maxMag
     print(base_i_12_convert(complex(input('input complex number here:'))))

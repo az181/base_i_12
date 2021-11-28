@@ -1,18 +1,30 @@
+def inversi12(i12Num, maxMag=0):
+    i12Num = '0'*(4-(len(str(i12Num)) % 4))+str(i12Num)
+    im = False
+    b10Num = [0, 0]
+    num = [str(i) for i in range(10)]
 
-    
-    
-def inversi12(i12Num):
-    i12Num='0'*(4-(len(i12Num)%4))+i12Num
-    dig=len(i12Num)//4
-    re=True
-    b10Num=[0,0]
-    print(i12Num)
     for x in enumerate(i12Num[::-1]):
-        if (x[0]//4)>=2:
-            re=False
+        if x[1] == '0':
+            im = not im
+            continue
+        if x[1] in num:
+            currntDig = int(x[1])
         else:
-            re=True
-        if x[0]%2:
-           b10Num[re]+=x[1]*12**(x[0]//4)
-        
-        
+            currntDig = ord(x[1])-65+10
+        # b10Num is list of [re,im] currntDig * 12**n *(1 if positive -1 if negative)
+        b10Num[im] += currntDig*(12**(x[0]//4))*(1-2*((x[0] % 4) >= 2))
+        im = not im
+
+    if maxMag != 0:
+        for i in enumerate(b10Num):
+            currntDig = str(i[1])
+            b10Num[i[0]] = currntDig[len(currntDig)-maxMag:]
+    return complex(*b10Num)
+
+
+if __name__ == '__main__':
+    print(inversi12(100020041009))
+    # (57-169j)
+    print(inversi12('3004900B'))
+    # (59-45j)

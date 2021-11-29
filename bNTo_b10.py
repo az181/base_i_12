@@ -62,6 +62,9 @@ if __name__ == '__main__':
     # print(bNTo_b10('100100000111',2))
     # # 2311
     # print(bNTo_b10('12345643',-4))
+    # # -10477
+    # print(bNTo_b10('Error',90))
+    # # 962033999
     try:
         print(bNTo_b10(input('input the number to be comverted to base N:'),
               complex(input('input the base N:'))))

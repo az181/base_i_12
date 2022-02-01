@@ -77,13 +77,14 @@ def b10To_bi12(b10Comp, maxMag=0):
 
 
 if __name__ == '__main__':
-    print(b10To_b12(12, 2))
-    # '10'
-    print(b10To_b12(12330,4))
-    # '7176'
-    print(b10To_bi12(57-169j))
-    # '100020041009'
-    print(b10To_b12(40012,4,1))
-    print(b10To_bi12(12+12j, 1))
-    # 'Error: invalid maxMag (in b10To_bi12)'
+    # print(b10To_b12(12, 2))
+    # # '10'
+    # print(b10To_b12(12330,4))
+    # # '7176'
+    # print(b10To_bi12(57-169j))
+    # # '100020041009'
+    # print(b10To_b12(40012,4,1))
+    # # 'N1A4'
+    # print(b10To_bi12(12+12j, 1))
+    # # 'Error: invalid maxMag (in b10To_bi12)'
     print(b10To_bi12(complex(input('input complex number here:'))))

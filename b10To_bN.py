@@ -1,4 +1,3 @@
-from math import ceil
 errorIn_b10TobN_typeError = "Error: maxNum or InNum invalid."
 errorIn_b10TobN_BaceTooSmall = "Error: Base > 1 error or InNum is < 0."
 errorIn_b10TobN_IDK_TBH = "Error: invalid N i think??"

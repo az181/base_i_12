@@ -1,10 +1,10 @@
-# base_i_12
+# base_i_12 (beta)
 base i₁₂
 
-converts base 10 number to base i₁₂
-converts base i₁₂ number to base 10
-converts base 10 number to base n
-converts base 10 number to base iₙ
+- converts base 10 number to base i₁₂
+- converts base i₁₂ number to base 10
+- converts base 10 number to base n
+- converts base 10 number to base iₙ
 
 -(12ⁿ)i -(12ⁿ) 12ⁿi 12ⁿ
 

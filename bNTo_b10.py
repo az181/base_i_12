@@ -66,7 +66,7 @@ if __name__ == '__main__':
     # print(bNTo_b10('Error',90))
     # # 962033999
     try:
-        print(bNTo_b10(input('input the number to be comverted to base N:'),
+        print(bNTo_b10(input('input the number to be comverted from base N:'),
               complex(input('input the base N:'))))
     except:
         print('Error: invalid input')
